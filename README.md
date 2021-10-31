@@ -1,5 +1,5 @@
 # qa-rails-ec-training-camellia
-Rails共同開発講座(6期: つつじ組)のリポジトリです。
+Rails共同開発講座(6期: つばき組)のリポジトリです。
 
 ## Member
 - 氏名: サンプル太郎
