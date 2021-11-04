@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  VALID_PASSWORD_REGEX = /\A[a-zA-Z0-9-]+\z/
   belongs_to :user_classification
 
   with_options presence: true do
