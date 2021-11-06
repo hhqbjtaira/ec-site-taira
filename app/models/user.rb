@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password
   VALID_PASSWORD_REGEX = /\A[\w+\-.]+\z/
   VALID_ZIPCODE_REGEX = /\A\d{3}[-]\d{4}\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
