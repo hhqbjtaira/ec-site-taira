@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-UserClassification.create(user_classification_name: "admin")
+UserClassification.create!(user_classification_name: "admin")
 2.times do |i|
-  User.create(password_digest: "qwerty",
+  User.create!(password: "qwerty",
               last_name: "user#{i}",
               first_name: "user#{i}",
               zipcode: "000-0000",
