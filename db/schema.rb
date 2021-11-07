@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2021_22_04_212504) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+ActiveRecord::Schema.define(version: 2021_11_05_124604) do
 
   create_table "user_classifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "user_classification_name", limit: 32
@@ -67,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_22_04_212504) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "password", limit: 64
+    t.string "password_digest", limit: 64
     t.string "last_name", limit: 16
     t.string "first_name", limit: 16
     t.string "zipcode", limit: 16
@@ -82,6 +83,7 @@ ActiveRecord::Schema.define(version: 2021_22_04_212504) do
     t.boolean "delete_flag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["user_classification_id"], name: "index_users_on_user_classification_id"
   end
 
