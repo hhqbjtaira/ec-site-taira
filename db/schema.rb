@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2021_22_04_212504) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-ActiveRecord::Schema.define(version: 2021_11_05_124604) do
 
   create_table "user_classifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "user_classification_name", limit: 32
