@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_22_04_212505) do
   end
 
   create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "products_id", null: false
+    t.bigint "product_id", null: false
     t.bigint "order_id", null: false
     t.bigint "shipment_status_id", null: false
     t.string "order_detail_number", limit: 64
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_22_04_212505) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_order_details_on_order_id"
-    t.index ["products_id"], name: "index_order_details_on_products_id"
+    t.index ["product_id"], name: "index_order_details_on_product_id"
     t.index ["shipment_status_id"], name: "index_order_details_on_shipment_status_id"
   end
 
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 2021_22_04_212505) do
   end
 
   add_foreign_key "order_details", "orders"
-  add_foreign_key "order_details", "products", column: "products_id"
+  add_foreign_key "order_details", "products"
   add_foreign_key "order_details", "shipment_statuses"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
