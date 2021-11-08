@@ -3,7 +3,21 @@ AllCops:
   Exclude:
     - "node_modules/**/*" # rubocop config/default.yml
     - "vendor/**/*"       # rubocop config/default.yml
+    - "app/channels/**/*"
     - "db/schema.rb"
+    - "db/migrate/**/*"
+    - "Gemfile"
+    - "Gemfile.lock"
+    - "config/**/*"
+    - "bin/**/*"
+    - "lib/**/*"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "public/**/*"
+    - "storage/**/*"
+    - "vendor/**/*"
+
+
 
 #################### Layout ################################
 
