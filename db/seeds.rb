@@ -93,54 +93,54 @@ OrderDetail.create!(product_id: 1,
                    order_id: 1,
                    shipment_status_id: 1,
                    order_detail_number: "0123456",
-                   order_quantity: 1
+                   order_quantity: 1,
                    shipment_date:DateTime.parse('1994-02-25T12:30:45'))
 
 OrderDetail.create!(product_id: 2,
                    order_id: 1,
                    shipment_status_id: 1,
                    order_detail_number: "0123456",
-                   order_quantity: 1
+                   order_quantity: 1,
                    shipment_date:DateTime.parse('1994-02-25T12:30:45'))
 
 OrderDetail.create!(product_id: 3,
                    order_id: 1,
                    shipment_status_id: 1,
                    order_detail_number: "0123456",
-                   order_quantity: 1
+                   order_quantity: 1,
                    shipment_date:DateTime.parse('1994-02-25T12:30:45'))
 
 OrderDetail.create!(product_id: 4,
                    order_id: 1,
                    shipment_status_id: 1,
                    order_detail_number: "0123456",
-                   order_quantity: 1
+                   order_quantity: 1,
                    shipment_date:DateTime.parse('1994-02-25T12:30:45'))
 
 OrderDetail.create!(product_id: 1,
                    order_id: 2,
                    shipment_status_id: 2,
                    order_detail_number: "1234567",
-                   order_quantity: 1
+                   order_quantity: 1,
                    Shipment_date:DateTime.parse('1994-02-26T12:30:45'))
 
 OrderDetail.create!(product_id: 2,
                    order_id: 2,
                    shipment_status_id: 2,
                    order_detail_number: "1234567",
-                   order_quantity: 1
+                   order_quantity: 1,
                    Shipment_date:DateTime.parse('1994-02-26T12:30:45'))
 
 OrderDetail.create!(product_id: 3,
                    order_id: 2,
                    shipment_status_id: 2,
                    order_detail_number: "1234567",
-                   order_quantity: 1
+                   order_quantity: 1,
                    Shipment_date:DateTime.parse('1994-02-26T12:30:45'))
 
 OrderDetail.create!(product_id: 4,
                    order_id: 2,
                    shipment_status_id: 2,
                    order_detail_number: "1234567",
-                   order_quantity: 1
+                   order_quantity: 1,
                    Shipment_date:DateTime.parse('1994-02-26T12:30:45'))
