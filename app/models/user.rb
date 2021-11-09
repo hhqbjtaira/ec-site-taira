@@ -5,6 +5,7 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE_NUMBER_REGEX = /\A[0-9]+\z/
   belongs_to :user_classification
+  has_many :orders, dependent: :destroy
 
   with_options presence: true do
     validates :password, length: { in: 6..15 }, format: { with: VALID_PASSWORD_REGEX }
