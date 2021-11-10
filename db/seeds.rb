@@ -79,68 +79,76 @@ Purchase.create!(purchase_price: 30000,
                 product_id: 2)
 
 Order.create!(user_id: 1,
-             order_date:DateTime.parse('1993-02-24T12:30:45')
+             order_date:DateTime.parse('1993-02-24T12:30:45'),
              order_number: "1234123412341234")
 
 Order.create!(user_id: 2,
-             order_date:DateTime.parse('1994-02-25T12:30:45')
+             order_date:DateTime.parse('1993-02-25T12:30:45'),
              order_number: "0123012301230123")
 
-ShipmentStatus.create!(sale_status_name: "準備中")
-ShipmentStatus.create!(sale_status_name: "発送済")
+ShipmentStatus.create!(shipment_status_name: "準備中")
+ShipmentStatus.create!(shipment_status_name: "発送済")
 
 OrderDetail.create!(product_id: 1,
                    order_id: 1,
                    shipment_status_id: 1,
                    order_detail_number: "0123456",
                    order_quantity: 1,
-                   shipment_date:DateTime.parse('1994-02-25T12:30:45'))
+                   shipment_date:DateTime.parse('1993-02-24T12:30:45')
+                   )
 
 OrderDetail.create!(product_id: 2,
                    order_id: 1,
                    shipment_status_id: 1,
                    order_detail_number: "0123456",
                    order_quantity: 1,
-                   shipment_date:DateTime.parse('1994-02-25T12:30:45'))
+                   shipment_date:DateTime.parse('1993-02-24T12:30:45')
+                   )
 
 OrderDetail.create!(product_id: 3,
                    order_id: 1,
                    shipment_status_id: 1,
                    order_detail_number: "0123456",
                    order_quantity: 1,
-                   shipment_date:DateTime.parse('1994-02-25T12:30:45'))
+                   shipment_date:DateTime.parse('1993-02-24T12:30:45')
+                   )
 
 OrderDetail.create!(product_id: 4,
                    order_id: 1,
                    shipment_status_id: 1,
                    order_detail_number: "0123456",
                    order_quantity: 1,
-                   shipment_date:DateTime.parse('1994-02-25T12:30:45'))
+                   shipment_date:DateTime.parse('1993-02-24T12:30:45')
+                   )
 
 OrderDetail.create!(product_id: 1,
                    order_id: 2,
                    shipment_status_id: 2,
                    order_detail_number: "1234567",
                    order_quantity: 1,
-                   Shipment_date:DateTime.parse('1994-02-26T12:30:45'))
+                   shipment_date:DateTime.parse('1993-02-24T12:30:45')
+                   )
 
 OrderDetail.create!(product_id: 2,
                    order_id: 2,
                    shipment_status_id: 2,
                    order_detail_number: "1234567",
                    order_quantity: 1,
-                   Shipment_date:DateTime.parse('1994-02-26T12:30:45'))
+                   shipment_date:DateTime.parse('1993-02-24T12:30:45')
+                   )
 
 OrderDetail.create!(product_id: 3,
                    order_id: 2,
                    shipment_status_id: 2,
                    order_detail_number: "1234567",
                    order_quantity: 1,
-                   Shipment_date:DateTime.parse('1994-02-26T12:30:45'))
+                   shipment_date:DateTime.parse('1993-02-24T12:30:45')
+                   )
 
 OrderDetail.create!(product_id: 4,
                    order_id: 2,
                    shipment_status_id: 2,
                    order_detail_number: "1234567",
                    order_quantity: 1,
-                   Shipment_date:DateTime.parse('1994-02-26T12:30:45'))
+                   shipment_date:DateTime.parse('1993-02-24T12:30:45')
+                   )
