@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
-  VALID_PASSWORD_REGEX = /\A[\w+\-.]+\z/
-  VALID_ZIPCODE_REGEX = /\A\d{3}[-]\d{4}\z/
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  VALID_PHONE_NUMBER_REGEX = /\A[0-9]+\z/
+  VALID_PASSWORD_REGEX = /\A[\w+\-.]+\z/.freeze
+  VALID_ZIPCODE_REGEX = /\A\d{3}-\d{4}\z/.freeze
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
+  VALID_PHONE_NUMBER_REGEX = /\A[0-9]+\z/.freeze
   belongs_to :user_classification
   has_many :orders, dependent: :destroy
 
@@ -19,5 +19,4 @@ class User < ApplicationRecord
     validates :email, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
     validates :phone_number, length: { maximum: 15 }, format: { with: VALID_PHONE_NUMBER_REGEX }
   end
-
 end
