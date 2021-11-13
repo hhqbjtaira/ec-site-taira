@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :users_edit
+  resources :users
   resources :products
 end
