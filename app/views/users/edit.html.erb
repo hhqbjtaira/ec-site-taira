@@ -86,5 +86,11 @@
     <div class="col-5 offset-2">
       <button class="btn btn-danger" type="submit">退会</button>
     </div>
+
+    <%= form_with model: @user do |form| %>
+      <%= form.text_field :last_name, :first_name, :zipcode, :prefecture, :municipality, :address, :apartments, :phone_number, :email %>
+      <%= form.submit %>
+    <% end %>
+
   </div>
 </main>
