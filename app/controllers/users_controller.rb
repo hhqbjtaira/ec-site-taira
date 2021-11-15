@@ -21,6 +21,7 @@ class UsersController < ApplicationController
                                 :address,
                                 :apartments,
                                 :phone_number,
-                                :email )
+                                :email,
+                                :password )
   end
 end
