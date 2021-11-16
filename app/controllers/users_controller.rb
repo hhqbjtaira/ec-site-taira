@@ -19,9 +19,6 @@ class UsersController < ApplicationController
                                 :prefecture,
                                 :municipality,
                                 :address,
-                                :apartments,
-                                :phone_number,
-                                :email,
-                                :password )
+                                :apartments)
   end
 end
