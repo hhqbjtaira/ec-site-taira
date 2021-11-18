@@ -14,16 +14,15 @@
           <p>注文番号：<%= @order.order_number %></p>
           <% if @order.order_preparing? %>
             <p>注文状態：準備中</p>
-          </div>
-          <div class="text-end">
-            <button type="button" class="btn btn-danger">注文をキャンセルする</button>
-          </div>
-        <% else %>
-          <div class="mt-5 ml-3">
-            <p>注文番号：<%= @order.order_number %></p>
+          <% else %>
             <p>注文状態：発送中</p>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
+        <div class="text-end">
+          <% if @order.order_preparing? %>
+            <button type="button" class="btn btn-danger">注文をキャンセルする</button>
+          <% end %>
+        </div>
         <table class="table table-borderless mt-3">
           <thead>
             <tr>
