@@ -6,7 +6,7 @@
         <div class="card border-dark">
           <div class="cord-body ml-3">
             <h4 class="mt-4">お届け先</h4>
-            <p class="ml-3">〒<%= @order.user.zipcode %>　<%= @order.user.prefecture + @order.user.municipality + @order.user.address %>　<%= @order.user.apartments %></p>
+            <p class="ml-3">〒<%= @order.user.zipcode %>　<%= @order.user.prefecture %><%= @order.user.municipality %><%= @order.user.address %>　<%= @order.user.apartments %></p>
             <p class="offset-sm-2"><%= @order.user.last_name %><%= @order.user.first_name %>様</p>
           </div>
         </div>
