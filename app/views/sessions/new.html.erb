@@ -6,30 +6,16 @@
     <h4 class="d-flex justify-content-center mt-5 mb-3">ログイン画面</h4>
     <div class="d-flex justify-content-center">
       <div>
-        <%= form.label :email, "メールアドレス" %>
-        <%= form.email_field :email %>
+        <%= form.label :email, "メールアドレス" %><br>
+        <%= form.email_field :email %><br>
+        <%= form.label :password, "パスワード" %><br>
+        <%= form.email_field :password %><br>
+        <%= form.submit "ログイン", class: "btn btn-primary" %><br>
+        <%= link_to "まだ登録がお済みでない方はこちら" %>
 
       </div>
     </div>
 
-    <div class="d-flex justify-content-center">
-      <div>
-        <%= form.label :password, "パスワード" %>
-        <%= form.email_field :password %>
-
-      </div>
-    </div>
-
-    <div class="d-flex justify-content-center">
-      <div>
-        <%= form.submit "ログイン", class: "btn btn-primary" %>
-
-      </div>
-    </div>
-
-    <div class="d-flex justify-content-center">
-      <a href="">まだ登録がお済みでない方はこちら</a>
-    </div>
     <% end %>
   </main>
 
