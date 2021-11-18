@@ -10,9 +10,9 @@
             <p class="offset-sm-2"><%= @order.user.last_name %><%= @order.user.first_name %>様</p>
           </div>
         </div>
-        <% if @order.order_preparing %>
-          <div class="mt-5 ml-3">
-            <p>注文番号：<%= @order.order_number %></p>
+        <div class="mt-5 ml-3">
+          <p>注文番号：<%= @order.order_number %></p>
+          <% if @order.order_preparing? %>
             <p>注文状態：準備中</p>
           </div>
           <div class="text-end">
