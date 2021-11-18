@@ -6,7 +6,7 @@ class Order < ApplicationRecord
     order_details.any? { |order_detail| order_detail.shipment_status.shipment_status_name == "準備中" }
   end
 
-  def total_amount
-    order_details.sum(&:subtotal)
+  def total_price
+    order_details.sum(&:subtotal_price)
   end
 end
