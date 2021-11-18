@@ -12,11 +12,7 @@
         </div>
         <div class="mt-5 ml-3">
           <p>注文番号：<%= @order.order_number %></p>
-          <% if @order.order_preparing? %>
-            <p>注文状態：準備中</p>
-          <% else %>
-            <p>注文状態：発送中</p>
-          <% end %>
+          <p>注文状態：<%= @order.order_preparing?? "準備中" : "発送中" %></p>
         </div>
         <div class="text-end">
           <% if @order.order_preparing? %>
