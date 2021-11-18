@@ -39,7 +39,7 @@
           <tbody>
             <% @order.order_details.each.with_index(1) do |order_detail, i| %>
               <tr>
-                <th scope="row"><%= "#{i}" %></th>
+                <th scope="row"><%= i %></th>
                 <td><%= order_detail.product.product_name %></td>
                 <td><%= order_detail.product.category.category_name %></td>
                 <td><%= order_detail.product.price %>円</td>
