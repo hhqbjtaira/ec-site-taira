@@ -11,10 +11,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
-      # ログインページができたらパスを変える
-      redirect_to @user
+      redirect_to login_path
     else
-      flash.now[:danger] = "登録に失敗しました"
+      flash.now[:danger] = @user.errors.full_messages
       render "new"
     end
   end
