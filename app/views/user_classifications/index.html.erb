@@ -1,0 +1,15 @@
+<% provide(:title, 'All user_classifications') %>
+<h1>All user_classifications</h1>
+
+<ul class="users">
+  <% @user_classifications.each do |user_classification| %>
+    <li>
+      <%= link_to user_classification.user_classification_name, user_classification %>
+      <%= link_to "delete", user_classification, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= link_to "作る", new_user_classification_path %>
