@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       # ログインページができたらパスを変える
       redirect_to @user
     else
-      flash.now[:alert] = "登録に失敗しました"
+      flash.now[:danger] = "登録に失敗しました"
       render "new"
     end
   end
