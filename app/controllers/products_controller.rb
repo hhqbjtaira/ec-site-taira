@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products_count = Product.count
     @products = Product.all.page(params[:page]).per(15)
     @categories = Category.all
   end
