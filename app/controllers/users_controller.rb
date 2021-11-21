@@ -19,6 +19,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.user_classification_id = 2
+    if @user.update(user_params)
+      flash[:success] = "#{@user.name}さんの基本情報を更新しました。"
+      redirect_to user_path
+    else
+      flash.now[:danger] = @user.errors.full_messages
+      render "edit"
+    end
+  end
+
   def edit
     @user = User.find_by(id: params[:id])
   end
