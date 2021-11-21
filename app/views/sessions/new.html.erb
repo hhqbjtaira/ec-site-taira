@@ -1,0 +1,13 @@
+<%= form_with url: login_path do |form| %>
+  <h4 class="d-flex justify-content-center mt-5 mb-3">ログイン画面</h4>
+  <div class="d-flex justify-content-center">
+    <div class="text-center">
+      <%= form.label :email, "メールアドレス" %><br>
+      <%= form.email_field :email %><br>
+      <%= form.label :password, "パスワード" %><br>
+      <%= form.email_field :password %><br>
+      <%= form.submit "ログイン", class: "btn btn-primary" %><br>
+      <%= link_to "まだ登録がお済みでない方はこちら", sign_up_path %>
+    </div>
+  </div>
+<% end %>
