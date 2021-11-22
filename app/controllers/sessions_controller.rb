@@ -7,11 +7,9 @@ class SessionsController < ApplicationController
     if !user.nil? && user.authenticate(email: params[:session][:email])
       log_in user
       redirect_to user
-      session[:id] = user.id, notice: 'ログイン成功'
     else
       flash.now[:danger] = '登録に失敗しました'
       render 'new'
-      session.delete(:id)
     end
 
   end
