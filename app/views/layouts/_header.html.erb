@@ -5,17 +5,23 @@
         <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
       </div>
       <div>
-        <ul>
-          <p>〇〇 ××さん</p>
-        </ul>
-        <ul class="navbar-nav">
-          <a class="nav-link text-dark" href="#">商品検索</a>
-          <a class="nav-link text-dark" href="#">カート</a>
-          <a class="nav-link text-dark" href="#">注文履歴</a>
-          <a class="nav-link text-dark" href="#">ユーザ情報</a>
-          <a class="nav-link text-dark" href="#">ログアウト</a>
-          <%= link_to 'ログアウト', logout_path, method: :delete %>
-        </ul>
+        <% if logged_in? %>
+          <ul>
+            <p><%= @current_user.first_name %><%= @current_user.last_name %>さん</p>
+          </ul>
+          <ul class="navbar-nav">
+            <li><%= link_to "商品検索", products_path %></li>
+            <a class="nav-link text-dark" href="#">カート</a>
+            <a class="nav-link text-dark" href="#">注文履歴</a>
+            <li><%= link_to "ユーザー情報", @current_user %></li>
+            <%= link_to "ログアウト", logout_path, method: :delete %>
+          </ul>
+        <% else %>
+          <ul class="navbar-nav">
+            <%= link_to "ログイン", login_path %>
+            <%= link_to "新規登録", sign_up_path %>
+          </ul>
+        <% end %>
       </div>
     </div>
   </nav>
