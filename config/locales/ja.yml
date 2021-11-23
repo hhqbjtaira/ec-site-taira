@@ -1,8 +1,27 @@
 ja:
+  activerecord:
+    models:
+      user: ユーザー
+      user_classification: ユーザー種別
+    attributes:
+      user:
+        password: パスワード
+        last_name: 姓
+        first_name: 名
+        zipcode: 郵便番号
+        prefecture: 都道府県
+        municipality: 市町村区
+        address: 番地
+        apartments: マンション、部屋番号
+        email: メールアドレス
+        phone_number: 電話番号
+        company_name: 会社名
+      user_classification:
+        user_classification_name: ユーザー種別名
   views:
     pagination:
-      first: "« 最初"
-      last: "最後 »"
-      next: "次 ›"
-      previous: "‹ 前"
-      truncate: "…"
+      first: « 最初
+      last: 最後 »
+      next: 次 ›
+      previous: ‹ 前
+      truncate: …
