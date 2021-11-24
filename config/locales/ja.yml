@@ -24,6 +24,7 @@ ja:
         email: メールアドレス
         phone_number: 電話番号
         company_name: 会社名
+        delete_flag: deleteフラグ
       user_classification:
         user_classification_name: ユーザー種別名
       order:
