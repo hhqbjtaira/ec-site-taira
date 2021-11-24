@@ -61,3 +61,6 @@ ja:
       next: 次 ›
       previous: ‹ 前
       truncate: …
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日
