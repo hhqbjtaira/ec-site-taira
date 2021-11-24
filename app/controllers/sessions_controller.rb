@@ -4,9 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email])
-    if !user.nil? && user.authenticate(email: params[:session][:email])
-      log_in user
-      redirect_to  products_path
+
+    if !user.nil? && user.authenticate(params[:session][:password])
+      login user
+      redirect_to user
     else
       flash.now[:danger] = '登録に失敗しました'
       render 'new'
