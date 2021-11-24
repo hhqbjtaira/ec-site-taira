@@ -74,6 +74,20 @@ Product.create!(
   delete_flag: false,
 )
 
+100.times do |i|
+  Product.create!(
+    product_name: "ボールペン#{i}",
+    category_id: 2,
+    price: 200,
+    description: "商品説明:シンプルで書きやすい人気のボールペンです",
+    sale_status_id: 2,
+    product_status_id: 2,
+    regist_date: DateTime.parse("1993-02-24T12:30:45"),
+    user_id: 1,
+    delete_flag: false,
+  )
+end
+
 Purchase.create!(
   purchase_price: 70000,
   purchase_quantity: 5,
