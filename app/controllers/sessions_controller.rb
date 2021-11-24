@@ -1,4 +1,23 @@
 class SessionsController < ApplicationController
   def new
   end
+
+  def create
+    user = User.find_by(email: params[:session][:email])
+
+    if !user.nil? && user.authenticate(params[:session][:password])
+      login user
+      redirect_to user
+    else
+      flash.now[:danger] = '登録に失敗しました'
+      render 'new'
+    end
+
+  end
+
+  def destroy
+   logout if logged_in?
+   flash[:danger] = 'ログアウトしました'
+   redirect_to login_path
+  end
 end
