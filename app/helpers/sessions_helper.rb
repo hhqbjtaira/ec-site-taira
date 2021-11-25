@@ -5,15 +5,14 @@ module SessionsHelper
 
    # 現在のユーザーをログアウトする
   def logout
-    forget(current_user)
+
     session.delete(:user_id)
     @current_user = nil
   end
 
   # current_user を定義
   def current_user
-    User.find_by(id: session[:user_id])
-    @current_user = user
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 
   # current_userがログイン済みユーザーであればtrueを返す
@@ -23,7 +22,7 @@ module SessionsHelper
 
    # current_userが存在するならユーザーがログインしていればtrue、その他ならfalseを返す
    def logged_in?
-    !current_user.nil?
+    current_user.present?
   end
 
 end

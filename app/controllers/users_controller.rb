@@ -14,8 +14,19 @@ class UsersController < ApplicationController
       flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
       redirect_to login_path
     else
-      flash.now[:danger] = @user.errors.full_messages
+      flash.now[:danger] = "登録に失敗しました。"
       render "new"
+    end
+  end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    if @user.update(user_params)
+      flash[:success] = "#{@user.name}さんの基本情報を更新しました。"
+      redirect_to ＠user
+    else
+      flash.now[:danger] = @user.errors.full_messages
+      render "edit"
     end
   end
 

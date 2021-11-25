@@ -2,8 +2,7 @@
 <main>
   <h2 class="text-center mt-5">ユーザ情報修正</h2>
   <table width="50%" style="margin-left:350px">
-    <%= form_with model: @user do |form| %>
-
+    <%= form_with model: @user, url: @user, local: true do |form| %>
     <tr height="40">
       <td align="center">
           氏名
