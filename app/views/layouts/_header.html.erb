@@ -10,10 +10,10 @@
             <p><%= @current_user.last_name %><%= @current_user.first_name %>さん</p>
           </ul>
           <ul class="navbar-nav">
-            <li><%= link_to "商品検索", products_path, class: "nav-link text-dark" %></li>
+            <%= link_to "商品検索", products_path, class: "nav-link text-dark" %>
             <a class="nav-link text-dark" href="#">カート</a>
             <a class="nav-link text-dark" href="#">注文履歴</a>
-            <li><%= link_to "ユーザー情報", @current_user, class: "nav-link text-dark" %></li>
+            <%= link_to "ユーザー情報", @current_user, class: "nav-link text-dark" %>
             <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
           </ul>
         <% else %>
