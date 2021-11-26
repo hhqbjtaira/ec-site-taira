@@ -62,5 +62,15 @@ ja:
       previous: ‹ 前
       truncate: …
   attributes:
+    user: ユーザー
+    user_classification: ユーザー種別
+    order: 注文
+    order_detail: 注文詳細
+    shipment_status: 発送状態
+    product: 商品
+    category: カテゴリー
+    product_status: 商品状態
+    sale_status: 販売状態
+    purchase: 仕入
     created_at: 作成日
     updated_at: 更新日
