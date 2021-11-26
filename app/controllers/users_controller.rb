@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find_by(id: params[:id])
     if @user.update(user_params)
       flash[:success] = "#{@user.name}さんの基本情報を更新しました。"
       redirect_to @user
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find_by(id: params[:id])
   end
 
   private
