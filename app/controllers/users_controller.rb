@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :show]
   before_action :correct_user, only: [:edit, :show]
 
-  include SessionsHelper
-
   def show
     @user = User.find_by(id: params[:id])
   end
