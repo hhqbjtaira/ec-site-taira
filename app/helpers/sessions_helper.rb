@@ -5,6 +5,7 @@ module SessionsHelper
 
   # 現在のユーザーをログアウトする
   def logout
+    # rubocop:disable Rails/HelperInstanceVariable
     session.delete(:user_id)
     @current_user = nil
   end
