@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :show]
+  before_action :correct_user, only: [:edit, :show]
 
   include SessionsHelper
 
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:success] = "#{@user.name}さんの基本情報を更新しました。"
-      redirect_to ＠user
+      redirect_to @user
     else
       flash.now[:danger] = @user.errors.full_messages
       render "edit"
@@ -53,20 +53,5 @@ class UsersController < ApplicationController
         :password,
         :password_confirmation,
       )
-    end
-
-    def logged_in_user
-      unless logged_in?
-        flash[:danger] = 'ログインしてください'
-        redirect_to login_url
-      end
-    end
-
-    def correct_user
-      @user = User.find_by(id: params[:id])
-      if current_user != user
-        flash[:danger] = '他人のユーザー情報を編集することはできません'
-        redirect_to root_url
-      end
     end
 end
