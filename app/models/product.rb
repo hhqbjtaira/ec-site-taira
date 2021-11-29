@@ -6,3 +6,11 @@ class Product < ApplicationRecord
   has_many :purchases, dependent: :destroy
   has_many :order_details, dependent: :destroy
 end
+
+def self.search(keyword)
+  if keyword.present?
+    Product.where(["product_name LIKE ?", "%#{keyword}%"])
+  else
+    Product.all
+  end
+end
