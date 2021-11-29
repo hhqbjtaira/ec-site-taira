@@ -4,6 +4,6 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all.page(params[:page]).per(15)
+    @products = Product.search(params[:keyword]).all.page(params[:page]).per(15)
   end
 end
