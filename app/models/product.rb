@@ -5,12 +5,11 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :purchases, dependent: :destroy
   has_many :order_details, dependent: :destroy
-end
 
-def self.search(keyword)
-  if keyword.present?
-    Product.where(["product_name LIKE ?", "%#{keyword}%"])
-  else
-    Product.all
+  def self.search(keyword, category_id)
+    products = Product.all
+    products = products.where(["product_name LIKE ?", "%#{keyword}%"]) if keyword.present?
+    products = products.where(category_id: category_id.to_i) if category_id.present?
+    products
   end
 end
