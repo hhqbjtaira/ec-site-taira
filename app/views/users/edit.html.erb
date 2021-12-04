@@ -86,18 +86,16 @@
   <div class="row mt-5">
     <div class="col-5">
       <div class="d-flex justify-content-end">
-        <%= form.submit "修正", class: "btn btn-primary" %>
+        <%
+=begin%>
+ <%= form.submit "修正", class: "btn btn-primary" %>
+<%
+=end%>
+        <%= link_to "修正",edit_user_path, class: "btn btn-primary" %>
 
       </div>
     </div>
-
-    <%
-=begin%>
- <div class="col-5 offset-2">
-      <%= form.submit "退会", class: "btn btn-primary" %>
-<%
-=end%>
-
+        <%= link_to "退会",edit_user_path, class: "btn btn-primary", method: :delete, "data-confirm" => "ユーザーデータが全て削除されます。本当に退会しますか？" %>
     </div>
 
     <% end %>
