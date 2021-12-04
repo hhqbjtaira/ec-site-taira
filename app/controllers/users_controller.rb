@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :show, :update]
-  before_action :correct_user, only: [:edit, :show, :update]
+  before_action :logged_in_user, only: [:edit, :show, :update, :destroy]
+  before_action :correct_user, only: [:edit, :show, :update, :destroy]
 
   def show
     @user = User.find_by(id: params[:id])
@@ -36,6 +36,13 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by(id: params[:id])
   end
+
+  def destroy
+    @user = User.find_by(id: params[:id])
+    @user.destroy
+    flash[:notice] = 'ユーザーを削除しました。'
+    redirect_to :root #削除に成功すればrootページに戻る
+end
 
   private
 
