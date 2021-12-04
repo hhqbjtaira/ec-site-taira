@@ -38,11 +38,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(id: params[:id])
-    @user.destroy
-    flash[:notice] = 'ユーザーを削除しました。'
-    redirect_to :root #削除に成功すればrootページに戻る
-end
+    User.find_by(id: params[:id]).destroy
+    flash[:success] = "ユーザーを削除しました。"
+    redirect_to root_path
+  end
 
   private
 
