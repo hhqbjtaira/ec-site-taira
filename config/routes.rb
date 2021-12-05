@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'purchase_completed', to: 'orders#purchase_completed'
+  post '/add_cart', to: 'carts#add_cart'
   get '/sign_up', to: 'users#new'
   post '/sign_up', to: 'users#create'
   get 'login', to:'sessions#new', as: 'login'
@@ -7,4 +9,5 @@ Rails.application.routes.draw do
   resources :orders
   resources :users
   resources :products
+  resources :carts
 end
