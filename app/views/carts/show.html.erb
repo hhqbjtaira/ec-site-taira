@@ -40,6 +40,74 @@
           </tr>
         </thead>
         <tbody>
+          <% if session[:cart].present? %>
+            <% @cart.each.with_index(1) do |cart, i| %>
+              <tr class="text-center">
+                <th class="align-middle">
+                  <%= i %>
+                </th>
+                <td class="align-middle">
+                  <%= cart[:product_name] %>
+                </td>
+                <td class="align-middle">
+                  <%= cart[:category_name] %>
+                </td>
+                <td class="align-middle">
+                  <%= cart[:price] %>円
+                </td>
+                <%= form_with url: cart_path, method: :patch, local: true do |f| %>
+                <%= f.hidden_field :product_id, :value => cart[:product_id] %>
+                  <td class="align-middle">
+                      <%= f.number_field :quantity, value: cart[:quantity], class: "btn btn-outline-dark", pattern: "[1-9][0-9]*", min: 1, required: true %>&nbsp;&nbsp;個
+                  </td>
+                  <td class="align-middle">
+                    <%= cart[:sub_total] %> 円
+                  </td>
+                <% end %>
+                <%= form_with url: cart_path, method: :delete, local: true do |f| %>
+                <%= f.hidden_field :product_id, :value => cart[:product_id] %>
+                  <td class="border-0 align-middle">
+                    <%= f.submit "削除", class: "btn btn-danger" %>
+                  </td>
+                <% end %>
+              </tr>
+            <% end %>
+            <tr class="text-center">
+              <th class="border-bottom-0 align-middle">
+              </th>
+              <td class="border-bottom-0 align-middle">
+              </td>
+              <td class="border-bottom-0 align-middle">
+              </td>
+              <td class="border-bottom-0 align-middle">
+              </td>
+              <td class="border-bottom-0 align-middle">
+                合計
+              </td>
+              <td class="border-bottom-0 align-middle">
+                <%= @total_price %>円
+              </td>
+            </tr>
+            <tr class="text-right">
+              <th class="border-0">
+              </th>
+              <td class="border-0">
+                <%= link_to '買い物を続ける', products_path, class: "btn btn-success" %>
+              </td>
+              <td class="border-0">
+              </td>
+              <td class="border-0">
+              </td>
+              <td class="border-0">
+                <%= link_to '注文を確定する', orders_path, method: :post, class: "btn btn-primary" %>
+              </td>
+              <td class="border-0 align-middle">
+              </td>
+            </tr>
+          <% else %>
+            <h2 class="text-center">カートに商品はありません</h2>
+          <% end %>
+        </tbody>
       </table>
     </div>
   </div>
