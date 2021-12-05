@@ -1,6 +1,6 @@
 UserClassification.create!(user_classification_name: "admin")
 UserClassification.create!(user_classification_name: "general")
-2.times do |i|
+3.times do |i|
   User.create!(
     password: "qwerty",
     last_name: "user#{i}",
