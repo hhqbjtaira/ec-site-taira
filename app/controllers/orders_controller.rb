@@ -19,4 +19,9 @@ class OrdersController < ApplicationController
     session[:cart].clear
     redirect_to purchase_completed_path(order_id: @order.id)
   end
+
+  def purchase_completed
+    order_id = params[:order_id]
+    @order = Order.find_by(id: params[:order_id])
+  end
 end
