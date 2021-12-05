@@ -28,4 +28,11 @@ class CartsController < ApplicationController
     end
     redirect_to('/carts/show')
   end
+
+  # カート内商品削除
+  def destroy
+    array = session[:cart].each_index.select {|i| session[:cart][i]["product_id"] == params[:product_id] }
+    session[:cart].delete_at(array[0])
+    redirect_to('/carts/show')
+  end
 end
