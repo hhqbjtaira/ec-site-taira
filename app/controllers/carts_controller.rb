@@ -35,4 +35,11 @@ class CartsController < ApplicationController
     session[:cart].delete_at(array[0])
     redirect_to('/carts/show')
   end
+
+  # カート内で数量変更
+  def update
+    array = session[:cart].each_index.select {|i| session[:cart][i]["product_id"] == params[:product_id] }
+    session[:cart][array[0]]["quantity"] = params[:quantity].to_i
+    redirect_to('/carts/show')
+  end
 end
