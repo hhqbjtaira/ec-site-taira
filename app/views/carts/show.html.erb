@@ -1,1 +1,47 @@
+<% provide(:title, "カート") %>
+<main>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-12 card border-dark mt-5">
+        <div class="cord-body ml-3 mb-2">
+          <h4 class="mt-4">お届け先</h4>
+          <p class="mb-2" style="padding-left: 20px;">〒<%= current_user.zipcode %>　<%= current_user.prefecture %><%= current_user.municipality %><%= current_user.address %>　<%= current_user.apartments %></p>
+          <p style="padding-left: 160px;"><%= current_user.last_name %>　<%= current_user.first_name %>様</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container">
+    <div class="row">
+      <table class="table mt-5 ml-3 border-dark">
+        <thead>
+          <tr class="text-center">
+            <th class="border-bottom border-dark" style="width:13%;">
+              No
+            </th>
+            <th class="border-bottom border-dark" style="width:18%;">
+              商品名
+            </th>
+            <th class="border-bottom border-dark" style="width:15%;">
+              商品カテゴリ
+            </th>
+            <th class="border-bottom border-dark" style="width:15%;">
+              値段
+            </th>
+            <th class="border-bottom border-dark" style="width:15%;">
+              個数
+            </th>
+            <th class="border-bottom border-dark" style="width:15%;">
+              小計
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
