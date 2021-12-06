@@ -6,6 +6,7 @@ class User < ApplicationRecord
   VALID_PHONE_NUMBER_REGEX = /\A[0-9]+\z/.freeze
   belongs_to :user_classification
   has_many :orders, dependent: :destroy
+  has_many :products, dependent: :destroy
 
   with_options presence: true do
     validates :password, length: { in: 6..15 }, format: { with: VALID_PASSWORD_REGEX }
