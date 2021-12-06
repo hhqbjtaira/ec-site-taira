@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "static_pages#home"
   get 'purchase_completed', to: 'orders#purchase_completed'
   post '/add_cart', to: 'carts#add_cart'
   get '/sign_up', to: 'users#new'
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   post    'login',   to: 'sessions#create'
   delete  'logout',  to: 'sessions#destroy', as: 'logout'
   resources :orders
-  resources :users
+  resources :users, only: [:edit, :show, :update, :destroy]
   resources :products
   resources :carts
 end
