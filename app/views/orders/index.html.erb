@@ -41,7 +41,7 @@
                 注文状態：<%= order.order_preparing? ? "準備中" : "発送中" %>
               </td>
               <td class="border-0 align-middle">
-                <%= link_to "詳細", order_path(i), class: "btn btn-primary btn-sm" %>
+                <%= link_to "詳細", order_path(order), class: "btn btn-primary btn-sm" %>
               </td>
             </tr>
           <% end %>
