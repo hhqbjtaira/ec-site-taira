@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :show, :update]
   before_action :correct_user, only: [:edit, :show, :update]
+  before_action :ensure_normal_user, only: [:update, :destroy]
 
   def show
     @user = User.find_by(id: params[:id])
