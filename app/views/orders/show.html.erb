@@ -16,7 +16,7 @@
         </div>
         <div class="text-end">
           <% if @order.order_preparing? %>
-            <button type="button" class="btn btn-danger">注文をキャンセルする</button>
+            <%= link_to "注文をキャンセルする", order_path, method: :delete, class: "btn btn-danger", data: {confirm: "本当にキャンセルしますか？"} %>
           <% end %>
         </div>
         <table class="table table-borderless mt-3">
