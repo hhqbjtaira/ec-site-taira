@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   post    'login',   to: 'sessions#create'
   delete  'logout',  to: 'sessions#destroy', as: 'logout'
   resources :orders
-  resources :users
+  resources :users, only: [:edit, :show, :update, :destroy]
   resources :products
 end
