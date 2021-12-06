@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :orders
   resources :users
   resources :products
+  post 'guest_sign_in', to: 'sessions#guest_sign_in'
 end
