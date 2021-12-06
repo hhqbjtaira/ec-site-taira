@@ -89,8 +89,8 @@
         <%= link_to "修正",edit_user_path(@current_user.id), class: "btn btn-primary" %>
       </div>
     </div>
-        <%= link_to "退会",user_path(@current_user.id), class: "btn btn-primary", method: :delete, data: { confirm: "ユーザーデータが全て削除されます。本当に退会しますか？" } %>
     <div class="col-5 offset-2">
+      <%= link_to "退会",user_path(@current_user.id), class: "btn btn-primary", method: :delete, data: { confirm: "ユーザーデータが全て削除されます。本当に退会しますか？" } %>
     </div>
     <% end %>
   </div>
