@@ -4,6 +4,6 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders.all.page(params[:page]).per(15)
+    @orders = current_user.orders.page(params[:page]).per(15)
   end
 end
