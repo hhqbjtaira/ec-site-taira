@@ -82,7 +82,7 @@
     </tr>
 
   </table>
-      <% unless user.email == 'guest@example.com' %>
+      <% unless ensure_normal_user.email == 'guest@example.com' %>
         <div class="row mt-5">
           <div class="col-5">
             <div class="d-flex justify-content-end">
