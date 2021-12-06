@@ -82,24 +82,22 @@
     </tr>
 
   </table>
+      <% unless user.email == 'guest@example.com' %>
+        <div class="row mt-5">
+          <div class="col-5">
+            <div class="d-flex justify-content-end">
+              <%= form.submit "修正", class: "btn btn-primary" %>
+            </div>
+          </div>
 
-  <div class="row mt-5">
-    <div class="col-5">
-      <div class="d-flex justify-content-end">
-        <%= form.submit "修正", class: "btn btn-primary" %>
-
-      </div>
-    </div>
-
-    <%
+        <%
 =begin%>
  <div class="col-5 offset-2">
-      <%= form.submit "退会", class: "btn btn-primary" %>
+            <%= form.submit "退会", class: "btn btn-primary" %>
+        </div>
 <%
 =end%>
-
-    </div>
-
-    <% end %>
+      <% end %>
   </div>
+    <% end %>
 </main>
