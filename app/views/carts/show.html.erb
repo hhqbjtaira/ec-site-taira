@@ -56,7 +56,7 @@
                   <%= cart[:price] %>円
                 </td>
                 <%= form_with url: cart_path, method: :patch, local: true do |f| %>
-                <%= f.hidden_field :product_id, :value => cart[:product_id] %>
+                <%= f.hidden_field :product_id, value: cart[:product_id] %>
                   <td class="align-middle">
                       <%= f.number_field :quantity, value: cart[:quantity], class: "btn btn-outline-dark", pattern: "[1-9][0-9]*", min: 1, required: true %>&nbsp;&nbsp;個
                   </td>
@@ -65,7 +65,7 @@
                   </td>
                 <% end %>
                 <%= form_with url: cart_path, method: :delete, local: true do |f| %>
-                <%= f.hidden_field :product_id, :value => cart[:product_id] %>
+                <%= f.hidden_field :product_id, value: cart[:product_id] %>
                   <td class="border-0 align-middle">
                     <%= f.submit "削除", class: "btn btn-danger" %>
                   </td>
