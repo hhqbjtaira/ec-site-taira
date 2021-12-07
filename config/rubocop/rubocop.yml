@@ -68,7 +68,7 @@ Lint/Void:
 
 
 Metrics/AbcSize:
-  Max: 33
+  Max: 35
 
 Metrics/BlockLength:
   Exclude:

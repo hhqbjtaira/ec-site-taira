@@ -11,8 +11,8 @@ class CartsController < ApplicationController
         quantity: cart["quantity"],
         sub_total: product.price * cart["quantity"],
       })
-      @total_price = @cart.sum {|cart| cart[:sub_total] }
     end
+    @total_price = @cart.sum {|cart| cart[:sub_total] }
   end
 
   def add_cart
