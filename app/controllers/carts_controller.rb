@@ -18,7 +18,7 @@ class CartsController < ApplicationController
   def add_cart
     if session[:cart].blank?
       session[:cart] = [{ product_id: params[:product_id], quantity: params[:quantity].to_i }]
-      return redirect_to("/carts/show")
+      return redirect_to carts_show_path
     end
     duplication = session[:cart].select {|cart| cart["product_id"] == params[:product_id] }
     if duplication.present?
@@ -26,20 +26,20 @@ class CartsController < ApplicationController
     else
       session[:cart].push({ product_id: params[:product_id], quantity: params[:quantity].to_i })
     end
-    redirect_to("/carts/show")
+    redirect_to carts_show_path
   end
 
   # カート内商品削除
   def destroy
     array = session[:cart].each_index.select {|i| session[:cart][i]["product_id"] == params[:product_id] }
     session[:cart].delete_at(array[0])
-    redirect_to("/carts/show")
+    redirect_to carts_show_path
   end
 
   # カート内で数量変更
   def update
     array = session[:cart].each_index.select {|i| session[:cart][i]["product_id"] == params[:product_id] }
     session[:cart][array[0]]["quantity"] = params[:quantity].to_i
-    redirect_to("/carts/show")
+    redirect_to carts_show_path
   end
 end
