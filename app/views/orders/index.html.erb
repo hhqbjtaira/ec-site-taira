@@ -37,7 +37,7 @@
                 <%= current_user.last_name %>　<%= current_user.first_name %> 様
               </td>
               <td class="text-left">
-                注文日時：<%= order.order_date.year %>/<%= order.order_date.month %>/<%= order.order_date.day %><br />
+                注文日時：<%= order.order_date.strftime("%Y/%m/%d") %><br />
                 注文状態：<%= order.order_preparing? ? "準備中" : "発送中" %>
               </td>
               <td class="border-0 align-middle">
