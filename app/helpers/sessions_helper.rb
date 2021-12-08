@@ -39,9 +39,13 @@ module SessionsHelper
     end
   end
 
-  def ensure_general_user
-    if resource.email == "guest@example.com"
+  def guest_user
+    if guest_user?
       redirect_to edit_user_path, alert: "ゲストユーザーは削除できません。"
     end
+  end
+
+  def guest_user?
+    current_user.email == "guest@example.com"
   end
 end
