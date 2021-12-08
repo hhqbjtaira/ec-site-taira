@@ -39,9 +39,9 @@ module SessionsHelper
     end
   end
 
-  def ensure_normal_user
+  def ensure_general_user
     if resource.email == "guest@example.com"
-      redirect_to root_path, alert: "ゲストユーザーは削除できません。"
+      redirect_to edit_user_path, alert: "ゲストユーザーは削除できません。"
     end
   end
 end
