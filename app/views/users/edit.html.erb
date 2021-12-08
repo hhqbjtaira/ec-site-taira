@@ -83,11 +83,15 @@
 
   </table>
       <% if @user.email == "guest@example.com"%>
+      <div class="text-center">
+      <p>ゲストユーザーはユーザー情報の編集ができません。
+      </p>
+      </div>
       <% else %>
       <div class="row mt-5">
       <div class="col-5">
         <div class="d-flex justify-content-end">
-          <%= form.submit "修正", class: "btn btn-primary" %>
+          <%= link_to "修正",edit_user_path(@current_user.id), class: "btn btn-primary" %>
         </div>
       </div>
 
