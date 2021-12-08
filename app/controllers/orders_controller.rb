@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
       return redirect_to carts_show_path
     end
 
-    @order = current_user.orders.create!(order_date: Time.now, order_number: rand(9_999_999_999_999_999))
+    @order = current_user.orders.create!(order_date: Time.current, order_number: rand(9_999_999_999_999_999))
     session[:cart].each do |cart|
       @order.order_details.create(
         product_id: cart["product_id"],
