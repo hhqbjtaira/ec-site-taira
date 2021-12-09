@@ -16,7 +16,7 @@
         </div>
         <div class="text-end">
           <% if @order.order_preparing? %>
-            <button type="button" class="btn btn-danger">注文をキャンセルする</button>
+            <%= link_to "注文をキャンセルする", order_path, method: :delete, class: "btn btn-danger", data: {confirm: "本当にキャンセルしますか？"} %>
           <% end %>
         </div>
         <table class="table table-borderless mt-3">
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="text-end mb-5">
-          <button type="button" class="btn btn-info">注文履歴に戻る</button>
+          <%= link_to "注文履歴に戻る", orders_path, class: "btn btn-info" %>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@
       <div class="mt-5 text-center">
         <h1>該当の注文は見つかりませんでした…</h1>
         <p class="mt-5">注文履歴画面に戻り、やり直してください</p>
-        <button type="button" class="btn btn-primary">注文履歴へ</button>
+        <%= link_to "注文履歴へ", orders_path, class: "btn btn-primary" %>
       </div>
     </div>
     </div>
