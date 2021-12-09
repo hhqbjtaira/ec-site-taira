@@ -8,9 +8,9 @@ class OrdersController < ApplicationController
       return redirect_to carts_show_path
     end
 
-    @order = current_user.orders.create!(order_date: Time.current, order_number: rand(9_999_999_999_999_999))
+    order = current_user.orders.create!(order_date: Time.current, order_number: rand(9_999_999_999_999_999))
     session[:cart].each do |cart|
-      @order.order_details.create(
+      order.order_details.create(
         product_id: cart["product_id"],
         shipment_status_id: 1,
         order_detail_number: rand(9_999_999_999_999_999),
@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
       )
     end
     session[:cart].clear
-    redirect_to purchase_completed_path(order_id: @order.id)
+    redirect_to purchase_completed_path(order_id: order.id)
   end
 
   def purchase_completed
