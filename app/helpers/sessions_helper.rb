@@ -41,7 +41,7 @@ module SessionsHelper
 
   def guest_user
     if guest_user?
-      redirect_to edit_user_path, alert: "ゲストユーザーは削除できません。"
+      redirect_to edit_user_path, alert: "ゲストユーザーの情報変更や削除はできません。"
     end
   end
 
