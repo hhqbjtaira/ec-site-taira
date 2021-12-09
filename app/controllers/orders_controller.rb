@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
 
     def correct_order
       order = Order.find_by(id: params[:id])
-      if current_user.orders.none? {|current_order| current_order == order }
+      if current_user.id != order.user_id
         flash[:danger] = "他人の情報にアクセスすることはできません。"
         redirect_to root_path
       end
