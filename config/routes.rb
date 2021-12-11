@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :orders
   resources :users, only: [:edit, :show, :update, :destroy]
   resources :products
+  post 'guest_sign_in', to: 'sessions#guest_sign_in'
 end

@@ -38,4 +38,14 @@ module SessionsHelper
       redirect_to root_path
     end
   end
+
+  def ensure_guest_user
+    if guest_user?
+      redirect_to edit_user_path, alert: "ゲストユーザーの情報変更や削除はできません。"
+    end
+  end
+
+  def guest_user?
+    current_user.email == "guest@example.com"
+  end
 end

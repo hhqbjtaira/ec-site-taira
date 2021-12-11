@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :show, :update, :destroy]
   before_action :correct_user, only: [:edit, :show, :update, :destroy]
+  before_action :ensure_guest_user, only: [:update, :destroy]
 
   def show
     @user = User.find_by(id: params[:id])
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(id: params[:id])
     if @user.update(user_params)
-      flash[:success] = "#{@user.name}さんの基本情報を更新しました。"
+      flash[:success] = "#{@user.last_name}#{@user.first_name}さんの基本情報を更新しました。"
       redirect_to @user
     else
       flash.now[:danger] = @user.errors.full_messages
