@@ -8,7 +8,7 @@ FactoryBot.define do
     municipality { "広島市安佐南区" }
     address { "大塚東" }
     apartments { "1-1-1" }
-    sequence(:email) { |n| "tester#{n}@example.com" }
+    sequence(:email) {|n| "tester#{n}@example.com" }
     phone_number { "0821230001" }
     company_name { "株式会社aaa" }
     association :user_classification

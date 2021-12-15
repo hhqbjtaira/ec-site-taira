@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe OrderDetail, type: :model do
   it "商品詳細で個数と商品の値段の小計をテスト" do
@@ -9,21 +9,21 @@ RSpec.describe OrderDetail, type: :model do
     expect(order_detail.subtotal_price).to eq 1000
   end
 
-  describe 'アソシエーションのテスト' do
-    context 'productモデルとの関係' do
-      it 'N:1となっている' do
+  describe "アソシエーションのテスト" do
+    context "productモデルとの関係" do
+      it "N:1となっている" do
         expect(OrderDetail.reflect_on_association(:product).macro).to eq :belongs_to
       end
     end
 
-    context 'orderモデルとの関係' do
-      it 'N:1となっている' do
+    context "orderモデルとの関係" do
+      it "N:1となっている" do
         expect(OrderDetail.reflect_on_association(:order).macro).to eq :belongs_to
       end
     end
 
-    context 'shipment_statusモデルとの関係' do
-      it 'N:1となっている' do
+    context "shipment_statusモデルとの関係" do
+      it "N:1となっている" do
         expect(OrderDetail.reflect_on_association(:shipment_status).macro).to eq :belongs_to
       end
     end
