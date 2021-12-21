@@ -390,9 +390,6 @@ RSpec/SubjectDeclaration: # new in 2.5
   Enabled: true
 RSpec/Rails/AvoidSetupHook: # new in 2.4
   Enabled: true
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 Gemspec/RequireMFA: # new in 1.23
   Enabled: true
 Lint/UselessRuby2Keywords: # new in 1.23
@@ -400,6 +397,3 @@ Lint/UselessRuby2Keywords: # new in 1.23
 Style/OpenStructUse: # new in 1.23
   Enabled: true
 # rubocop:enable Style/LineLength, Style/StringLiterals
->>>>>>> feature/#85
-=======
->>>>>>> development
