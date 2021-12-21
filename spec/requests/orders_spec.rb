@@ -2,12 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "Orders", type: :request do
   let(:user) { create(:user) }
-  let(:order) { create(:order, user_id: user.id) }
+
   describe "アクションのテスト" do
     describe "ログインしている状態" do
       let(:rspec_session) { { user_id: user} }
 
       context "GET /orders/show" do
+        let(:order) { create(:order, user_id: user.id, order_date: Time.current, order_number: rand(9_999_999_999_999_999)) }
         it "オーダー詳細画面の表示に成功すること" do
           get order_path(order)
           expect(response.status).to eq 200
