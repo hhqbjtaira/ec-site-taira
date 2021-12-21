@@ -12,18 +12,13 @@ RSpec.describe "Orders", type: :request do
         end
       end
 
-    describe "GET /orders/index" do
-      before do
-        @current_user = user
-        order
+      context "GET /orders/index" do
+        it "注文履歴の表示に成功すること" do
+          get orders_path
+          expect(response.status).to eq 200
+        end
       end
 
-      it "注文履歴の表示に成功すること" do
-        current_user = @current_user
-        get orders_path
-        expect(response.status).to eq 200
-      end
-    end
 
     describe "POST /orders/create" do
       let(:order_detail) { create(:order_detail, order_id: order.id, product_id: product.id) }
