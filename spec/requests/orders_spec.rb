@@ -87,8 +87,35 @@ RSpec.describe "Orders", type: :request do
           expect(response.status).to eq 200
         end
       end
+
+      describe "DELETE /orders/destroy" do
+        let!(:order) { create(:order, user_id: user.id, order_date: Time.current, order_number: rand(9_999_999_999_999_999)) }
+        let(:shipment_status) { create(:shipment_status, id: 1) }
+        let(:order_detail) { create(:order_detail, order_id: order.id, shipment_status_id: shipment_status.id) }
+
+        it "注文キャンセル" do
+          order_detail
+          order.order_details
+          expect do
+            delete order_path(order)
+          end.to change(OrderDetail, :count).by(-1)
         end
 
+        context "注文詳細が空の場合" do
+          before do
+            order.order_details = []
+          end
+
+          it "注文キャンセル後にオーダーを削除する" do
+            expect do
+              delete order_path(order)
+            end.to change(Order, :count).by(-1)
+          end
+
+          it "注文履歴に遷移" do
+            delete order_path(order)
+            expect(response).to redirect_to orders_path
+          end
         end
       end
     end
