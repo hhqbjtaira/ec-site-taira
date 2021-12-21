@@ -1,7 +1,7 @@
 AllCops:
   Exclude:
-    - "node_modules/**/*" 
-    - "vendor/**/*"       
+    - "node_modules/**/*"
+    - "vendor/**/*"
     - "app/channels/**/*"
     - "db/schema.rb"
     - "db/migrate/**/*"
