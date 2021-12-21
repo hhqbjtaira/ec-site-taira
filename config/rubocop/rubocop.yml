@@ -382,7 +382,6 @@ Rails/WhereExists: # new in 2.7
   Enabled: true
 Rails/WhereNot: # new in 2.8
   Enabled: true
-# rubocop:disable Style/LineLength, Style/StringLiterals
 RSpec/ExcessiveDocstringSpacing: # new in 2.5
   Enabled: true
 RSpec/IdenticalEqualityAssertion: # new in 2.4
@@ -391,6 +390,7 @@ RSpec/SubjectDeclaration: # new in 2.5
   Enabled: true
 RSpec/Rails/AvoidSetupHook: # new in 2.4
   Enabled: true
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 Gemspec/RequireMFA: # new in 1.23
@@ -401,3 +401,5 @@ Style/OpenStructUse: # new in 1.23
   Enabled: true
 # rubocop:enable Style/LineLength, Style/StringLiterals
 >>>>>>> feature/#85
+=======
+>>>>>>> development
