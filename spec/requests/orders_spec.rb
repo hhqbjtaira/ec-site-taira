@@ -4,6 +4,8 @@ RSpec.describe "Orders", type: :request do
   let(:user) { create(:user) }
   let(:order) { create(:order, user_id: user.id) }
   describe "アクションのテスト" do
+    describe "ログインしている状態" do
+      let(:rspec_session) { { user_id: user} }
 
       context "GET /orders/show" do
         it "オーダー詳細画面の表示に成功すること" do
