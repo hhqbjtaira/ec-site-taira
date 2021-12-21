@@ -5,12 +5,12 @@ RSpec.describe "Orders", type: :request do
   let(:order) { create(:order, user_id: user.id) }
   describe "アクションのテスト" do
 
-    describe "GET /orders/show" do
-      it "オーダー詳細画面の表示に成功すること" do
-        get order_path(order)
-        expect(response.status).to eq 200
+      context "GET /orders/show" do
+        it "オーダー詳細画面の表示に成功すること" do
+          get order_path(order)
+          expect(response.status).to eq 200
+        end
       end
-    end
 
     describe "GET /orders/index" do
       before do
