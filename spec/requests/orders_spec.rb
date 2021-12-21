@@ -79,19 +79,18 @@ RSpec.describe "Orders", type: :request do
         end
       end
 
+      context "GET /orders/purchase_completed" do
+        let(:order) { create(:order, user_id: user.id, order_date: Time.current, order_number: rand(9_999_999_999_999_999)) }
+
+        it "購入完了画面の表示に成功すること" do
+          get purchase_completed_path(order_id: order.id)
+          expect(response.status).to eq 200
+        end
+      end
         end
 
         end
       end
     end
-
-    # context "GET /orders/purchase_completed" do
-    #   it "購入完了画面の表示に成功すること" do
-    #     current_user = user
-    #     # byebug
-    #     get purchase_completed_path(order)
-    #     expect(response.status).to eq 200
-    #   end
-    # end
   end
 end
