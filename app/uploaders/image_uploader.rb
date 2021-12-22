@@ -1,9 +1,13 @@
 class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  #[400, 200]は例なので画像のサイズは後で指定
+  # [400, 200]は例なので画像のサイズは後で指定
   include CarrierWave::MiniMagick
-  process resize_to_fit: [400, 200]
+  # process resize_to_fit: [200, 100]
+  version :thumb100 do
+    process resize_to_fit: [100, 100]
+  end
+
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -11,7 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  #アップロードしたファイルの保存先を指定する。
+  # アップロードしたファイルの保存先を指定する。
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -54,14 +58,14 @@ class ImageUploader < CarrierWave::Uploader::Base
       model.instance_of?(Municipe) ? model.cpf : model.id
     end
 
-    #画像がアップロードされてない時に、'sample.jpg'を表示する。
+    # 画像がアップロードされてない時に、'sample.jpg'を表示する。
     def default_url
-      'sample.jpg'
+      "sample.png"
     end
 
-    #アップロードを許可するファイル種類を指定する。
+    # アップロードを許可するファイル種類を指定する。
     def extension_allowlist
-      %w(jpg jpeg gif png)
+      %w(jpg jpeg png gif tiff)
     end
 
 end
