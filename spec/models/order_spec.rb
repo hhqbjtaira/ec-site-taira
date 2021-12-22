@@ -1,12 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Order, type: :model do
-
   describe "インスタンスメソッドのテスト" do
     let(:product) { create(:product) }
-    let(:product_2) { create(:product) }
+    let(:product2) { create(:product) }
     let!(:order_detail) { create(:order_detail, product_id: product.id, order_id: order.id, shipment_status_id: shipment_status.id) }
-    let!(:order_detail_2) { create(:order_detail, product_id: product_2.id, order_id: order.id, shipment_status_id: shipment_status.id) }
+    let!(:order_detail2) { create(:order_detail, product_id: product2.id, order_id: order.id, shipment_status_id: shipment_status.id) }
     let(:shipment_status) { create(:shipment_status) }
     let(:order) { create(:order) }
 
@@ -33,6 +32,5 @@ RSpec.describe Order, type: :model do
         expect(Order.reflect_on_association(:order_details).macro).to eq :has_many
       end
     end
-
   end
 end
