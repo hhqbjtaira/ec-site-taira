@@ -8,7 +8,6 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [100, 100]
   end
 
-
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
@@ -65,7 +64,6 @@ class ImageUploader < CarrierWave::Uploader::Base
 
     # アップロードを許可するファイル種類を指定する。
     def extension_allowlist
-      %w(jpg jpeg png gif tiff)
+      %w[jpg jpeg png gif]
     end
-
 end
