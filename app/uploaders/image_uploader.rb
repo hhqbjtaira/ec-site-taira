@@ -3,7 +3,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # [400, 200]は例なので画像のサイズは後で指定
   include CarrierWave::MiniMagick
-  # process resize_to_fit: [200, 100]
   version :thumb100 do
     process resize_to_fit: [100, 100]
   end
@@ -51,19 +50,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
-  private
+  # 画像がアップロードされてない時に、'sample.jpg'を表示する。
+  def default_url
+    "sample.png"
+  end
 
-    def model_id
-      model.instance_of?(Municipe) ? model.cpf : model.id
-    end
-
-    # 画像がアップロードされてない時に、'sample.jpg'を表示する。
-    def default_url
-      "sample.png"
-    end
-
-    # アップロードを許可するファイル種類を指定する。
-    def extension_allowlist
-      %w[jpg jpeg png gif]
-    end
-end
+  # アップロードを許可するファイル種類を指定する。
+  def extension_allowlist
+    %w[jpg jpeg png gif]
+  end
