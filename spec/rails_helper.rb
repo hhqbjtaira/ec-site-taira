@@ -64,6 +64,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  # rubocop:disable RSpec/HookArgument, Style/SingleLineMethods, Style/HashSyntax, RSpec/AnyInstance
   # テストケース共通の事前処理
   config.before(:each) do
     # let(:rspec_session) で指定された値を セッションの初期値とします
@@ -78,4 +79,5 @@ RSpec.configure do |config|
     # sessionメソッドを上書き
     allow_any_instance_of(ActionDispatch::Request).to receive(:session).and_return(session)
   end
+  # rubocop:enable RSpec/HookArgument, Style/SingleLineMethods, Style/HashSyntax, RSpec/AnyInstance
 end

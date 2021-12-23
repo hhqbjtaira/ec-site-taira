@@ -23,7 +23,15 @@ RSpec.describe "Orders", type: :request do
       end
 
       describe "POST /orders/create" do
-        let(:order_detail) { create(:order_detail, order_id: order.id, product_id: RSpec.configuration.session[:cart][0]["product_id"], shipment_status_id: shipment_status.id, order_quantity: RSpec.configuration.session[:cart][0]["quantity"]) }
+        let(:order_detail) {
+          create(
+            :order_detail,
+            order_id: order.id,
+            product_id: RSpec.configuration.session[:cart][0]["product_id"],
+            shipment_status_id: shipment_status.id,
+            order_quantity: RSpec.configuration.session[:cart][0]["quantity"],
+          )
+        }
         let(:product) { create(:product) }
         let(:shipment_status) { create(:shipment_status) }
         let(:rspec_session) { { cart: product, user_id: user } }
@@ -98,9 +106,9 @@ RSpec.describe "Orders", type: :request do
         it "注文キャンセル" do
           order_detail
           order.order_details
-          expect do
+          expect {
             delete order_path(order)
-          end.to change { OrderDetail.count }.by(-1)
+          }.to change { OrderDetail.count }.by(-1)
         end
 
         context "注文詳細が空の場合" do
@@ -109,9 +117,9 @@ RSpec.describe "Orders", type: :request do
           end
 
           it "注文キャンセル後にオーダーを削除する" do
-            expect do
+            expect {
               delete order_path(order)
-            end.to change { Order.count }.by(-1)
+            }.to change { Order.count }.by(-1)
           end
 
           it "注文履歴に遷移" do
