@@ -4,10 +4,13 @@ RSpec.describe Order, type: :model do
   describe "インスタンスメソッドのテスト" do
     let(:product) { create(:product) }
     let(:product2) { create(:product) }
-    let!(:order_detail) { create(:order_detail, product_id: product.id, order_id: order.id, shipment_status_id: shipment_status.id) }
-    let!(:order_detail2) { create(:order_detail, product_id: product2.id, order_id: order.id, shipment_status_id: shipment_status.id) }
     let(:shipment_status) { create(:shipment_status) }
     let(:order) { create(:order) }
+
+    before do
+      create(:order_detail, product_id: product.id, order_id: order.id, shipment_status_id: shipment_status.id)
+      create(:order_detail, product_id: product2.id, order_id: order.id, shipment_status_id: shipment_status.id)
+    end
 
     context "注文の状態確認ができる" do
       it "発送状態が確認できる" do
