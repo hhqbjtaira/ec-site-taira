@@ -390,3 +390,9 @@ RSpec/SubjectDeclaration: # new in 2.5
   Enabled: true
 RSpec/Rails/AvoidSetupHook: # new in 2.4
   Enabled: true
+Gemspec/RequireMFA: # new in 1.23
+  Enabled: true
+Lint/UselessRuby2Keywords: # new in 1.23
+  Enabled: true
+Style/OpenStructUse: # new in 1.23
+  Enabled: true
