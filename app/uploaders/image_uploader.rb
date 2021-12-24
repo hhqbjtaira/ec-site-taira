@@ -15,7 +15,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   # アップロードしたファイルの保存先を指定する。
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/#{user.class.to_s.underscore}/#{image}/#{user.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
