@@ -61,7 +61,7 @@ RSpec.describe "Orders", type: :request do
             }.to change { Order.count }.by(1)
           end
 
-          context "orders#create内でオーダーの情報が必要なテスト" do
+          context "orders#create内でオーダーの情報が必要なテスト" do # rubocop:disable RSpec/MultipleMemoizedHelpers
             let(:order) { create(:order, user_id: user.id, order_date: Time.current, order_number: rand(9_999_999_999_999_999)) }
 
             it "注文詳細が作られる" do
@@ -99,7 +99,7 @@ RSpec.describe "Orders", type: :request do
       end
 
       describe "DELETE /orders/destroy" do
-        let!(:order) { create(:order, user_id: user.id, order_date: Time.current, order_number: rand(9_999_999_999_999_999)) }
+        let(:order) { create(:order, user_id: user.id, order_date: Time.current, order_number: rand(9_999_999_999_999_999)) }
         let(:shipment_status) { create(:shipment_status, id: 1) }
         let(:order_detail) { create(:order_detail, order_id: order.id, shipment_status_id: shipment_status.id) }
 
