@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def guest_sign_in
-    user = User.find_or_create_by!(email: "guest@example.com") do |user|
+    guest_user = User.find_or_create_by!(email: "guest@example.com") do |user|
       user.password = "guestlogin"
       user.last_name = "guest"
       user.first_name = "guest"
@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
       user.user_classification_id = 2
       user.company_name = "株式会社guest"
     end
-    login user
+    login guest_user
     redirect_to root_path, notice: "ゲストユーザーとしてログインしました。"
   end
 end
