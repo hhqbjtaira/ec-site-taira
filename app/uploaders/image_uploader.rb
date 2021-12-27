@@ -9,7 +9,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # アップロードしたファイルの保存先を指定する。
   def store_dir
-    "uploads/#{user.class.to_s.underscore}/#{image}/#{user.id}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # 画像がアップロードされてない時に、'sample.jpg'を表示する。
