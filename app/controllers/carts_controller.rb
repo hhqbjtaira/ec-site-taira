@@ -1,6 +1,8 @@
 class CartsController < ApplicationController
   def show
     @cart = []
+    return if session[:cart].nil?
+
     session[:cart].each do |cart|
       product = Product.find_by(id: cart["product_id"])
       @cart.push({

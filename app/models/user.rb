@@ -20,4 +20,6 @@ class User < ApplicationRecord
     validates :email, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
     validates :phone_number, length: { maximum: 15 }, format: { with: VALID_PHONE_NUMBER_REGEX }
   end
+
+  mount_uploader :image, ImageUploader
 end
