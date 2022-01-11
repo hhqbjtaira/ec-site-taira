@@ -3,9 +3,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb100 do
     process resize_to_fit: [100, 100]
   end
-  storage :file
-  # S3を設定したら以下に変更
-  # storage :fog
+
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
   # アップロードしたファイルの保存先を指定する。
   def store_dir

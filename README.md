@@ -1,15 +1,9 @@
-# qa-rails-ec-training-camellia
-Rails共同開発講座(6期: つばき組)のリポジトリです。
 
 ## Member
-- 氏名: サンプル太郎
-  - 好きなメソッド: sample
-
 - 指名: Taira
-  - 好きなメソッド: uniq
+ 
 
-- 氏名: ハム基
-  - 好きなメソッド: present
+
 
 ## Docker操作
 ゼロからdocker環境を立ち上げる場合は、上から順にコマンドを実行すればOK

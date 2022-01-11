@@ -38,7 +38,7 @@
                 <td><%= order_detail.product.product_name %></td>
                 <td><%= order_detail.product.category.category_name %></td>
                 <td><%= order_detail.product.price %>円</td>
-                <td><%= order_detail.order_quantity %>　個</td>
+                <td><%= order_detail.order_quantity %>個</td>
                 <td><%= order_detail.subtotal_price %>円</td>
                 <td>注文状態：<%= order_detail.shipment_status.shipment_status_name %></td>
               </tr>
@@ -47,7 +47,7 @@
         </table>
         <div class="border-top border-dark">
           <div class="mt-2 offset-sm-6">
-            <p class="ml-4">合計　　　　　<%= @order.total_price %>円</p>
+            <p class="ml-4">合計<%= @order.total_price %>円</p>
           </div>
         </div>
         <div class="text-end mb-5">
