@@ -54,8 +54,10 @@
       </div>
     </section>
 
-    <div class="text-center">
-      <%= link_to '修正/退会する', edit_user_path, class: "btn btn-primary" %>
-    </div>
+    <% if !guest_user? %>
+      <div class="text-center">
+        <%= link_to '修正/退会する', edit_user_path, class: "btn btn-primary" %>
+      </div>
+    <% end %>
 
   </main>
