@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(title = "")
-    default_title = "私立探求学園Rails専攻"
+    default_title = "通販サイト"
     if title.blank?
       default_title
     else
