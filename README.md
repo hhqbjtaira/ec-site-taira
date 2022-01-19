@@ -53,8 +53,8 @@ https://ec-1-14.herokuapp.com
 * エラーメッセージの日本語化
 * ヘッダー修正
 * テストデータ作成
-* * Order Model Spec
-* * Static Pages Controller Request Spec
+  * Order Model Spec
+  * Static Pages Controller Request Spec
 
 ## 改善、気になっている点
 * 見た目の改善の必要性
@@ -63,17 +63,17 @@ https://ec-1-14.herokuapp.com
 ## 技術・環境
 
 * フロントエンド
-* * Bootstrap '~> 5.0.2'
-* * SCSS
+** Bootstrap '~> 5.0.2'
+  * SCSS
 
 * バックエンド
-* * Ruby '2.7.1'
-* * Rails '~> 6.0.4', '>= 6.0.4.1'
+  * Ruby '2.7.1'
+  * Rails '~> 6.0.4', '>= 6.0.4.1'
 
 * インフラ
-* * heroku
-* * MySQL2 '>= 0.4.4'
-* * AWS(S3)
+  * heroku
+  * MySQL2 '>= 0.4.4'
+  * AWS(S3)
 
 * 開発環境
-* * Docker
+  * Docker
