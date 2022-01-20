@@ -16,6 +16,7 @@ https://ec-1-14.herokuapp.com
 ## 画面紹介
 * 商品検索画面
 <img width="1236" alt="スクリーンショット 2022-01-19 8 05 14" src="https://user-images.githubusercontent.com/89443713/150032971-b1577451-1320-4f06-af53-abed6dff7482.png">
+
 ## 設計
 * ER図
 <img width="1401" alt="スクリーンショット 2022-01-19 8 14 13" src="https://user-images.githubusercontent.com/89443713/150033876-66dc41a2-81fc-43c7-9349-9bc21bcedc80.png">
